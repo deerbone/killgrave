@@ -1,4 +1,4 @@
-module github.com/friendsofgo/killgrave
+module github.com/deerbone/killgrave
 
 go 1.21
 

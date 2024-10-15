@@ -9,8 +9,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	killgrave "github.com/friendsofgo/killgrave/internal"
-	server "github.com/friendsofgo/killgrave/internal/server/http"
+	killgrave "github.com/deerbone/killgrave/internal"
+	server "github.com/deerbone/killgrave/internal/server/http"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/radovskyb/watcher"

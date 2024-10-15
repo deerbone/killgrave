@@ -1,8 +1,8 @@
 builds:
-  - 
+  -
     main: ./cmd/killgrave/main.go
-    ldflags: 
-      - -s -w -X github.com/friendsofgo/killgrave/internal/app/cmd._version={{.Version}}
+    ldflags:
+      - -s -w -X github.com/deerbone/killgrave/internal/app/cmd._version={{.Version}}
     env:
       - CGO_ENABLED=0
     goos:
@@ -33,7 +33,7 @@ archives:
       {{- if .Arm }}v{{ .Arm }}{{ end }}
     format_overrides:
       - goos: windows
-        format: zip    
+        format: zip
     files:
       - LICENSE
       - README.md

@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	killgrave "github.com/friendsofgo/killgrave/internal"
+	killgrave "github.com/deerbone/killgrave/internal"
 	"github.com/gorilla/mux"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

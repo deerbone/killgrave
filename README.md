@@ -6,9 +6,9 @@
 
 Killgrave is a simulator for HTTP-based APIs, in simple words a **Mock Server**, very easy to use, made in **Go**.
 
-![Github actions](https://github.com/friendsofgo/killgrave/actions/workflows/main.yaml/badge.svg?branch=main)
-[![Version](https://img.shields.io/github/release/friendsofgo/killgrave.svg?style=flat-square)](https://github.com/friendsofgo/killgrave/releases/latest)
-[![Go Report Card](https://goreportcard.com/badge/github.com/friendsofgo/killgrave)](https://goreportcard.com/report/github.com/friendsofgo/killgrave)
+![Github actions](https://github.com/deerbone/killgrave/actions/workflows/main.yaml/badge.svg?branch=main)
+[![Version](https://img.shields.io/github/release/friendsofgo/killgrave.svg?style=flat-square)](https://github.com/deerbone/killgrave/releases/latest)
+[![Go Report Card](https://goreportcard.com/badge/github.com/deerbone/killgrave)](https://goreportcard.com/report/github.com/deerbone/killgrave)
 [![FriendsOfGo](https://img.shields.io/badge/powered%20by-Friends%20of%20Go-73D7E2.svg)](https://friendsofgo.tech)
 
 # Table of Content
@@ -71,7 +71,7 @@ You can learn more about how to configure imposters in the [Imposter Configurati
 
 You can install Killgrave in different ways, but all of them are very simple:
 
-### Homebrew 
+### Homebrew
 
 If you are a Mac user, you can install Killgrave using [Homebrew](https://brew.sh/):
 
@@ -79,7 +79,7 @@ If you are a Mac user, you can install Killgrave using [Homebrew](https://brew.s
 $ brew install friendsofgo/tap/killgrave
 ```
 
-:warning:  If you are installing via Homebrew, you always get the [latest Killgrave version](https://github.com/friendsofgo/killgrave/releases), we hope to fix this soon.
+:warning:  If you are installing via Homebrew, you always get the [latest Killgrave version](https://github.com/deerbone/killgrave/releases), we hope to fix this soon.
 
 ### Docker
 
@@ -114,7 +114,7 @@ to compile the software because parameters such as `version` are added to the co
 
 ### Other
 
-Windows and Linux users can download binaries from the [Github Releases](https://github.com/friendsofgo/killgrave/releases) page.
+Windows and Linux users can download binaries from the [Github Releases](https://github.com/deerbone/killgrave/releases) page.
 
 ## Getting Started
 
@@ -219,29 +219,29 @@ If you want to use `killgrave` from a client application you should consider con
 In the CORS section of the file you can find the following options:
 
 - **methods** (string array)
-  
+
   Represents the **Access-Control-Request-Method header**, if you don't specify it or if you leave it as an empty array, the default values will be:
 
   `"GET", "HEAD", "POST", "PUT", "OPTIONS", "DELETE", "PATCH", "TRACE", "CONNECT"`
 
 - **headers** (string array)
-  
+
   Represents the **Access-Control-Request-Headers header**, if you don't specify it or if you leave it as an empty array, the default values will be:
 
   `"X-Requested-With", "Content-Type", "Authorization"`
 
 - **exposed_headers** (string array)
-  
+
   Represents the **Access-Control-Expose-Headers header**, if you don't specify it or if you leave it as an empty array, the default values will be:
 
   `"Cache-Control", "Content-Language", "Content-Type", "Expires", "Last-Modified", "Pragma"`
 
 - **origins** (string array)
-  
+
   Represents the **Access-Control-Allow-Origin header**, if you don't specify it or if you leave it as an empty array this option has not default value
 
 - **allow_credentials** (boolean)
-  
+
   Enables or disables the **Access-Control-Allow-Credentials header**.
 
 ### Preparing Killgrave for Proxy Mode
@@ -264,7 +264,7 @@ We use a rule-based system to match requests to imposters. Therefore, you have t
     {
         "request": {
             "method": "GET",
-            "endpoint": "/gophers/01D8EMQ185CA8PRGE20DKZTGSR"            
+            "endpoint": "/gophers/01D8EMQ185CA8PRGE20DKZTGSR"
         },
         "response": {
             "status": 200,
@@ -688,4 +688,4 @@ Here is an example that includes the request body in the response:
 [Contributions](CONTRIBUTING.md) are more than welcome, if you are interested please follow our guidelines to help you get started.
 
 ## License
-MIT License, see [LICENSE](https://github.com/friendsofgo/killgrave/blob/main/LICENSE)
+MIT License, see [LICENSE](https://github.com/deerbone/killgrave/blob/main/LICENSE)
