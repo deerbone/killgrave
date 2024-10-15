@@ -7,7 +7,6 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"os"
 	"strings"
 	"text/template"
 	"time"
@@ -43,34 +42,15 @@ func writeHeaders(r Response, w http.ResponseWriter) {
 }
 
 func writeBody(i Imposter, res Response, w http.ResponseWriter, r *http.Request) {
-	bodyBytes := []byte(res.Body)
-
-	if res.BodyFile != nil {
-		bodyFile := i.CalculateFilePath(*res.BodyFile)
-		bodyBytes = fetchBodyFromFile(bodyFile)
-	}
-
-	templateBytes, err := applyTemplate(i, bodyBytes, r)
+	templateBytes, err := applyTemplate(i, res.BodyData, r)
 	if err != nil {
 		log.Printf("error applying template: %v\n", err)
 	}
 
-	w.Write(templateBytes)
-}
-
-func fetchBodyFromFile(bodyFile string) (bytes []byte) {
-	if _, err := os.Stat(bodyFile); os.IsNotExist(err) {
-		log.Printf("the body file %s not found\n", bodyFile)
-		return
-	}
-
-	f, _ := os.Open(bodyFile)
-	defer f.Close()
-	bytes, err := io.ReadAll(f)
+	_, err = w.Write(templateBytes)
 	if err != nil {
-		log.Printf("imposible read the file %s: %v\n", bodyFile, err)
+		log.Printf("error writing response body: %v\n", err)
 	}
-	return
 }
 
 func applyTemplate(i Imposter, bodyBytes []byte, r *http.Request) ([]byte, error) {
